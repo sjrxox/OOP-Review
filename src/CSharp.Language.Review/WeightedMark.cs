@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.Language.Review
 {
-    class Program
+    class WeightedMark
     {
-        static void Main(string[] args)
-        {
-            
-        }
     }
 }

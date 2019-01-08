@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.Language.Review
 {
-    class Program
+    class EarnedMark
     {
-        static void Main(string[] args)
-        {
-            
-        }
     }
 }
