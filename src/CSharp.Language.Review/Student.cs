@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace CSharp.Language.Review
 {
-    class Student
+    public class Student
     {
+        public string Name { get; private set; }
+        public EarnedMark[] Marks { get; private set; }
+
+
+        public Student (string name, EarnedMark[] marks)
+        {
+
+            Name = name;
+            Marks = marks;
+        }
     }
 }
