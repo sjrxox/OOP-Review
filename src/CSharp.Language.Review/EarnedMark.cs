@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.Language.Review
 {
-    public class EarnedMark
+    public class EarnedMark : WeightedMark
     {
         public int Possible { get; private set; }
         private double _Earned;
@@ -22,9 +22,38 @@ namespace CSharp.Language.Review
             }
             
         }
-        public double percent
+        public double Percent
         { get { return (Earned / Possible) * 100; } }
-        public double WeightedPercent;
+        public double WeightedPercent
+        { get { return Percent * Weight / 100; } }
+
+        public EarnedMark(WeightedMark markableItem, int possible, double earned)
+            : this(markableItem.Name, markableItem.Weight, possible, earned)
+        {
+        }
+
+        public EarnedMark(string name, int weight, int possible, double earned)
+            : base(name, weight)
+        {
+
+            if (possible <= 0)
+                throw new Exception("Invalid possible marks");
+            Possible = possible;
+            Earned = earned;
+
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} ({1})\t - {2}% ({3}/{4}) \t - Weighted Mark {5}%",
+                Name,
+                Weight,
+                Percent,
+                Earned,
+                Possible,
+                WeightedPercent);
+
+        }
         
 
     }
