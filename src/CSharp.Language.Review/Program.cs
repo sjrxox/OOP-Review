@@ -2,6 +2,7 @@
 //that we want to use or reference in the code in this file
 
 //f12 takes you to where a definition or code is.
+//alt+f12 taking you to the definition without going out of the class (dots to navigate)
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,7 @@ namespace CSharp.Language.Review
         
         //This property provides "controlled access"
         // to do the data in the backing store (the field)
+        
         public List<Student> Students
         { 
             get { return _students; }

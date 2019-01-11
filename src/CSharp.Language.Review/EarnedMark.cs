@@ -27,16 +27,22 @@ namespace CSharp.Language.Review
         public double WeightedPercent
         { get { return Percent * Weight / 100; } }
 
+        //This constructor calls another constructor
+        //before it runs its own body of instructions(code)
+        //Inheritance calls another constructor before that constructor runs its code
+        //hooking up constructors in this fashion is
+        //known as "daisy-chaining" your constructor calls.
         public EarnedMark(WeightedMark markableItem, int possible, double earned)
-            : this(markableItem.Name, markableItem.Weight, possible, earned)
+            : this(markableItem.Name, markableItem.Weight, possible, earned) //a
         {
+            //d
         }
 
         public EarnedMark(string name, int weight, int possible, double earned)
-            : base(name, weight)
+            : base(name, weight) //b
         {
 
-            if (possible <= 0)
+            if (possible <= 0) //c
                 throw new Exception("Invalid possible marks");
             Possible = possible;
             Earned = earned;
