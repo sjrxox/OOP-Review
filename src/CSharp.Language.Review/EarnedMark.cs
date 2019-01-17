@@ -8,10 +8,19 @@ namespace CSharp.Language.Review
 {
     public class EarnedMark : WeightedMark
     {
+
+        //this is an example of an auto-implemented property
+        //properties provide a controlled access to information
         public int Possible { get; private set; }
+
+        //this is a field
         private double _Earned;
+
+        //this is an explicitly implemented property
         public double Earned
         {
+
+            // we are using the earned field as a "backing store"
             get { return _Earned; }
             set
             {
@@ -22,7 +31,7 @@ namespace CSharp.Language.Review
             }
             
         }
-        public double Percent
+        public double Percent // an example of a property that derives its values from other data
         { get { return (Earned / Possible) * 100; } }
         public double WeightedPercent
         { get { return Percent * Weight / 100; } }
@@ -49,6 +58,8 @@ namespace CSharp.Language.Review
 
         }
 
+        //changing the behaviour of the base class by overriding some method
+        //is one way that we accomplish Polymorphism
         public override string ToString()
         {
             return String.Format("{0} ({1})\t - {2}% ({3}/{4}) \t - Weighted Mark {5}%",

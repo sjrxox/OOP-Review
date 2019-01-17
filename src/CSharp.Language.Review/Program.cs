@@ -33,8 +33,8 @@ namespace CSharp.Language.Review
         public static void Main(string[] args)
         {
 
-            Student topStudent = new Student("Shar Lee", null);
-            Student secondBestStudent = new Student("Don Welch", null);
+            //Student topStudent = new Student("Shar Lee", null);
+            //Student secondBestStudent = new Student("Don Welch", null);
 
             //new = will tell the os 
             // - to allocate enough memory for a student object
