@@ -33,6 +33,14 @@ namespace CSharp.Language.Review
         public static void Main(string[] args)
         {
 
+            Student topStudent = new Student("Shar Lee", null);
+            Student secondBestStudent = new Student("Don Welch", null);
+
+            //new = will tell the os 
+            // - to allocate enough memory for a student object
+            // - run the appropriate constructor 
+            // - to return the memory address of the newly created object
+
 
             //the body of the Main() method
             //acts as the "driver" of my application.
